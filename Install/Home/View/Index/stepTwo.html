@@ -1,0 +1,130 @@
+<extend name="Public/extend"/>
+
+<block name="content">
+
+   
+   <div class="content width">
+	<div class="step2">
+    	<h3 style=" background:url(__PUBLIC__/Install/img/step.jpg) no-repeat center -70px ;"></h3>
+    	<ul>
+        	<li class="center left " style="margin-left:15px;">欢迎使用ShopsN</li>
+            <li class="center left Orange">检查环境  </li>
+            <li class="center left" style="margin-left:-15px;">配置系统</li>
+        </ul>
+    </div>
+<div class="frame ">
+	<h4>服务器信息</h4>
+	
+	
+	<div style="overflow-x: auto; overflow-y: auto; height: 400px; background-color:#FFF; ">
+    <table width="96%"border="0" align="center" cellpadding="0" cellspacing="0" style="line-height:30px;">
+  <tr>
+    <td width="24%" height="30"  align="left" class="size12 bold">环境检测</td>
+    <td width="24%" align="left" class="size12 bold">推荐配置</td>
+    <td width="24%" align="left" class="size12 bold">当前状态</td>
+    <td width="24%" align="left" class="size12 bold">最低要求</td>
+  </tr>
+  <tr>
+    <td height="40">操作系统</td>
+    <td>类UNX</td>
+    <td><img src="__PUBLIC__/Install/img/Correct.jpg" width="16" height="16"><?php echo PHP_OS; ?></td>
+    <td>不限制</td>
+  </tr>
+  <tr>
+    <td height="40">服务器环境</td>
+    <td>apache/nginx</td>
+    <td><?php echo $_SERVER['SERVER_SOFTWARE']; ?></td>
+    <td>apache2.0以上/nginx1.6以上</td>
+  </tr>
+  <tr>
+    <td height="40">PHP版本</td>
+    <td>5.5.x</td>
+    <td><?php echo PHP_VERSION; ?></td>
+    <td>5.5.0以上</td>
+  </tr>
+  <tr>
+    <td height="40">附件上传</td>
+    <td>2M</td>
+    <td>{$uploadSize}</td>
+    <td>不限制</td>
+  </tr>
+  <tr>
+    <td height="40">session</td>
+    <td>开启</td>
+    <td><?php echo $session; ?></td>
+    <td>开启</td>
+  </tr>
+  <tr>
+    <td height="40">safe_mode</td>
+    <td>基础配置</td>
+    <td><?php echo $safeMode; ?></td>
+    <td>启用</td>
+  </tr>
+  <tr>
+    <td height="40">GD库</td>
+    <td>必须开启</td>
+    <td><?php echo $gd; ?></td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td height="40">pdo</td>
+    <td>必须开启</td>
+    <td><?php echo $mysql; ?></td>
+    <td>启用</td>
+  </tr>
+    <tr>
+        <td height="40">mysqli</td>
+        <td>必须开启</td>
+        <td><?php echo $mysqli; ?></td>
+        <td>启用</td>
+    </tr>
+</table>
+<table width="96%" border="0" cellpadding="0" cellspacing="0" style="line-height:30px;">
+  <tr>
+    <td width="24%" height="30"  align="left" class="size12 bold">目录、文件权限检查</td>
+    <td width="24%" align="left" class="size12 bold">推荐配置</td>
+    <td width="24%" align="left" class="size12 bold">写入</td>
+    <td width="24%" align="left" class="size12 bold">读取</td>
+  </tr>
+
+<?php 
+    $testDir = null;
+    foreach($isWrite as $dir){
+         $testDir = siteDir.$dir;
+         $cObj::dirCreate($testDir);
+       if($cObj::testWrite($testDir)){
+           $write = '<span class="correct_span">&radic;</span>可写 ';
+       }else{
+           $write = '<span class="correct_span error_span">&radic;</span>不可写 ';
+         $error++;
+       }
+       if(is_readable($testDir)){
+           $read = '<span class="correct_span">&radic;</span>可读' ;
+       }else{
+           $read = '<span class="correct_span error_span">&radic;</span>不可读';
+         $error++;
+       }
+    ?>
+            <tr>
+              <td><?php echo $dir; ?></td>
+              <td>读写</td>
+              <td><?php echo $write; ?></td>
+              <td><?php echo $read; ?></td>
+            </tr>
+    <?php
+    }
+    ?> 
+
+
+    </table></div>
+	</div>
+<div style="overflow:hidden">
+	<span class="left"><a href="<?php echo U('index');?>" class="on-Button left">上一步</a><a href="<?php echo U('stepThree');?>" class="under-Button left">下一步</a>
+</div>
+</div>
+
+	
+
+
+
+</block>

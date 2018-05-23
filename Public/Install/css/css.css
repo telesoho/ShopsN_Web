@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0px; padding:0px;}
+ul,ol{list-style:none;}
+input,img{border:0;font-family:"微软雅黑"; vertical-align:middle}
+a{ color:#333; text-decoration:none;}
+b, h2, h3, strong, big, del{font-weight:normal; overflow:hidden;}
+a:hover{text-decoration:none;}
+input, select, textarea, button {outline:0 none; vertical-align: middle;}
+li {list-style: none outside none;}
+img{ max-width:100%; height:auto; width: auto\9; border:0;}
+.left{float:left;}
+.right{float:right;}
+.clear{ clear:both;}
+.center{text-align:center;}
+.size16{font-size:16px;}
+.size12{font-size:12px; color:#417b9d}
+.bold{font-weight:bold;}
+body{ font-family:"微软雅黑";  font-size:14px; font-weight:normal; width:100%; color:#a4a5a7; background:url(../img/bj.jpg) center; line-height:24px;}
+.Orange{color:#fb6c45;}
+.on-Button{background-color:#bbb3b1; border-radius:4px; text-align:center; line-height:30px; color:#FFF; overflow:hidden; width:98px; height:28px; display:block; margin:5px 10px;}
+.under-Button{background-color:#fb6a47; border-radius:4px; text-align:center; line-height:30px; color:#FFF; overflow:hidden; width:98px; height:28px; display:block; margin:5px 10px;}
+.gray{color:#333333;}
+.gray2{color:#bbbbbb;}
+/* 公共 */
+.width{width:1003px; margin:0 auto;}
+.top{width:1003px; padding-top:50px; overflow:hidden}
+.logo{width:324px; height:41px; margin:0 auto;}
+.Can-finish{width:228px; height:40px; background-color:#ed6623; line-height:40px; display:block; color:#FFF; border-radius:6px; margin-bottom:25px;}
+.bottom{margin:50px auto; color:#FFF;}
+.content{width:923px; background-color:#f5f5f5; line-height:40px; display:block;  border-radius:6px; padding:40px; overflow:hidden; min-height:400px;}
+/* 欢迎使用ShopsN */
+.step1{width:920px; overflow:hidden;}
+.step1 h3{overflow:hidden; height:50px;}
+.step1 ul li{width:300px;  font-size:15px;}
+.frame{color:#333333; border:1px solid #dddddd;  border-radius:6px; margin-top:50px; margin-bottom:20px; padding-bottom:3px; background-color:#FFF;}
+.frame h4{color:#333333; border-bottom:1px solid #dddddd; line-height:40px; overflow:hidden; text-indent:15px; background-color:#f5f5f5;border-top-left-radius: 8px;border-top-right-radius: 8px;}
+.frame table{margin:20px;}
+/* 检查环境 */
+.step2{width:920px; overflow:hidden;}
+.step2 h3{overflow:hidden; height:50px;}
+.step2 ul li{width:300px;  font-size:15px;}
+/* 配置系统 */
+.frame input{border:1px solid #e3e9ef;}
+/* 安装完成 */
+.Reception{background-color:#fd932a; border-radius:4px; text-align:center; line-height:40px; color:#FFF; overflow:hidden; width:148px; display:block; margin:5px 10px;}
+.Backstage{background-color:#f7dbc4; border-radius:4px; text-align:center; line-height:40px; color:#FFF; overflow:hidden; width:148px;  display:block; margin:5px 10px; border:1px solid #fd8622;}
+
+

@@ -1,0 +1,21 @@
+<volist name="goods_type" id="ty">
+    <volist name="ty" id="da">
+        <div class="paymentCon clearfix">
+            <div class="con-parent clearfix fl">
+                <a href="javascript:;" class="fl position-parent">
+                    <input type="checkbox" name="gift_id[]" value="{$da.gift_id}">
+                    <img src="{$gift.img_url}"> <span class="icon">赠品</span>
+                </a>
+
+                <div class="fl ition">
+                    <a href="javascript:;">title</a>
+                </div>
+            </div>
+            <div class="fl atte">{$da.new_type}</div>
+            <div class="fl price">{$da.price}.00</div>
+            <div class="fl number">{$da.gift_number}</div>
+            <div class="fl dint">{$da.discount}</div>
+            <div class="fl sual" id="sslh">{$da.Subtotal}.00</div>
+        </div>
+    </volist>
+</volist>

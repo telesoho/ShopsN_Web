@@ -1,0 +1,43 @@
+<extend name="Order/personalEdit"/>
+<!-- 清空头部广告 -->
+<block name="ad_top"></block>
+
+<block name='content'>
+    <include file="Public/assets_header"/>
+    <link rel="stylesheet" href="__CSS__/distribution.css">
+</head>
+<body>
+<div class="title clearfix4>
+    <ul class="clearfix fl">
+        <a href="javascript:;">我的团队</a>
+    </ul>
+    <div class="menuTree">
+        <div>{$p_name} -</div>
+        <div>自己 -</div>
+        <div>
+            <div class="list">
+                <empty name="data">
+                    <span class="menu">暂无数据</span>
+                </empty>
+                <foreach name="data" item="item" >
+                    <span class="menu" data-status="0" data-id="{$item.id}">{$item.nick_name}</span>
+                </foreach>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+    <script>
+        var url = "{:U('getInfo')}";
+    </script>
+    <!--右侧一键到顶 and 客服-->
+    <include file="Order/personalHomeTop"/>
+    </div>
+    <!--尾部-->
+    <script src="__JS__/header.js"></script>
+    <script src="__JS__/Calendar.js"></script>
+    <script src="__JS__/assets/assets.js"></script>
+    <script src="__JS__/distribution.js"></script>
+</block>

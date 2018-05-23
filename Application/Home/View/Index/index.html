@@ -1,0 +1,120 @@
+<extend name="Public/indexEdit"/>
+<block name="content">
+	轮播
+	<div class="hpTopNews clearfix">
+		<div class="null fl"></div>
+		<div class="hpTopBanner fl">
+			<ul class="fl slides clearfix">
+				<li class="fl"><a href="javscript:;"><img></a></li>
+				<li class="fl"><a href="javscript:;"><img></a></li>
+			</ul>
+			<a href="javascript:;" class="left"><</a>
+			<a href="javascript:;" class="right">></a>
+			<div class="page">
+				<input type="hidden" id="banner_url" value="{:U('Index/banner')}"/>
+			</div>
+		</div>
+		<div class="fl hpLeftBanner">
+			<div class="special-sales">
+				<h2 class="clearfix">
+					<span class="fl">新品</span>
+					<a href="{:U('Product/ProductList',['show'=>'show','new'=>'new'])}" class="fr">更多></a>
+				</h2>
+				<div class="mc">
+					<ul>
+						<volist name="newThrees" id="top">
+							<li style="overflow: hidden;" <if condition='$i==1'>class="active"</if> ><a href="{$top.ad_link}"><img width="284" height="115" class="lazy" src="__IMG__/load1.jpg" data-original="{$top.pic_url}" /></a></li>
+						</volist>
+
+					</ul>
+					<ol class="clearfix">
+						<volist name="newThrees" id="top" key="i">
+							<li  <if condition='$i==1'>class="fl hover"</if><if condition='$i==2'>class="fl active"</if><if condition='$i==3'>class="fl"</if>>
+							{$top.title}
+							</li>
+						</volist>
+					</ol>
+				</div>
+			</div>
+			<div class="jdnews">
+				<h3 class="clearfix">
+					<b class="fl">亿速公告</b>
+					<a href="{:U('Service/getAnnounceList')}" class="fr">更多></a>
+				</h3>
+				<foreach name="announcements" item="announce">
+					<p>
+						<a href="{:U('Service/getAnnouDetails',array('id'=>$announce['id']))}" class="clearfix">
+							<em class="fl">[公告]</em>
+								<span class="fl">
+									{$announce.title|msubstr=0,12,'utf-8',true}
+								</span>
+							<if condition="$announce.type eq 1">
+								<span><img src="__IMG__/new.gif" alt=""></span>
+							</if>
+						</a>
+					</p>
+				</foreach>
+			</div>
+		</div>
+	</div>
+
+	<div class="home-today w">
+		<div class="fl home-today-fl">
+			<img src="__IMG__/t-title.jpg" alt="">
+			<i class="mrtj-sj"></i>
+			<ol class="mrtj-tab clearfix">
+				<li class="fl active">我喜欢的产品</li>
+				<li class="fl" onclick="restric()">超值让利</li>
+				<li class="fl">最新爆款</li>
+			</ol>
+		</div>
+		<div class="fl home-today-fr">
+
+			<ul class="clearfix active">
+				<volist name="tuijian" id="tuijian">
+					<li class="fl"><a href="{$tuijian.ad_link}"><img height="165" width="247" class="lazy" src="__IMG__/load2.jpg" data-original="{$tuijian.pic_url}" alt=""></a></li>
+				</volist>
+			</ul>
+			<ul class="clearfix">
+				<volist name="restric" id="restric">
+					<li class="fl"><a href="{$restric.ad_link}"><img height="165" width="247" class="lazy" src="__IMG__/load2.jpg" data-original="{$restric.pic_url}" alt=""></a></li>
+				</volist>
+			</ul>
+			<ul class="clearfix">
+				<volist name="newTop" id="newTop">
+					<li class="fl"><a href="{$newTop.ad_link}"><img height="165" width="247" class="lazy" src="__IMG__/load2.jpg" data-original="{$newTop.pic_url}" alt=""></a></li>
+				</volist>
+			</ul>
+			<ul class="clearfix">
+				<li class="fl"><a href="javascript:;"><img class="lazy" src="__IMG__/load2.jpg"  alt=""></a></li>
+				<li class="fl"><a href="javascript:;"><img class="lazy" src="__IMG__/load2.jpg"  alt=""></a></li>
+				<li class="fl"><a href="javascript:;"><img class="lazy" src="__IMG__/load2.jpg"  alt=""></a></li>
+				<li class="fl"><a href="javascript:;"><img class="lazy" src="__IMG__/load2.jpg"  alt=""></a></li>
+				<!--data-original="img/con_four.jpg" 删除-->
+			</ul>
+		</div>
+	</div>
+	<!--1f-->
+    <div id="goods_class"></div>
+	</div>
+	<!--左侧下楼梯菜单-->
+	<div id="menu">
+		<ul>
+			<volist name="bigInfor" id="big">
+				<li>{$big.class_name}<span>{$big.class_name}</span></li>
+			</volist>
+		</ul>
+	</div>
+    <input type="hidden" id="loading" value="__SERVER__"/>
+    <script src="__CDN_LAZYLOAD_JS__"></script>
+    <script src="__JS__/index.js"></script>
+    <script>
+        var goodsClassUrl = "{:U('getGoodsClass')}";//获取分类接口(原)
+        var newGoodsClassUrl = "{:U('IndexClass/getGoodsClass')}";//获取分类接口(新)
+
+        var ProductListUrl = "{:U('Product/ProductList')}";
+        var BrandListUrl = "{:U('Brand/index')}";
+        var goodsDetailsUrl = "{:U('Goods/goodsDetails')}";
+    </script>
+    <script src="__JS__/indexScroll.js"></script>
+</block>

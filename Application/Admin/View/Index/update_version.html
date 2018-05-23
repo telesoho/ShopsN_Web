@@ -1,0 +1,29 @@
+<extend name="Public/publicHTML"/>
+<block name="content">
+
+    <div class="list">
+        <form id="myForm" action="">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="details">
+                <tbody>
+                <foreach name="data" item="item">
+                <tr>
+                    <td width="25%">
+                        <div align="right">版本号：</div>
+                    </td>
+                    <td width="55%"><input type="text" disabled="disabled" class="version"size="24" value="{$item.version}"/></td>
+                    <td width="20%"><a href="{$item.url}">手动下载</a></td>
+                </tr>
+                </foreach>
+
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="footer">
+        <button type="button" class="button" id="button" onclick="updateVersion()" style="min-width:120px;">一键更新</button>
+    </div>
+    <script type="text/javascript">
+        var update_url = "{:U('update_version')}";
+    </script>
+    <script type="text/javascript" src="__JS__/admin/updateVersion.js"></script>
+</block>

@@ -1,0 +1,37 @@
+<extend name="Order/personalEdit"/>
+<!-- 清空头部广告 -->
+<block name="ad_top"></block>
+
+<block name='content'>
+    <div class="person-section clearfix">
+        <include file="Public/assets_header"/>
+        <!--内容-->
+        <div class="mordrMain fr securityS-content-wrap">
+            <div class="title clearfix">
+                <ul class="clearfix fl nav">
+                    <li class="fl active hover"><a href="javascript:;">推荐列表</a></li>
+                </ul>
+            </div>
+            <div class="content-wrap">
+                <div class="content-info" style="height: 300px">
+                    <h2>您的推荐信息</h2>
+                    <ul>
+                        <li>推荐链接：{$data.url}</li>
+                        <li>推荐二维码：<img src="{$data.code_path}" weight="200px" height="200px"></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!--右侧一键到顶 and 客服-->
+        <include file="Order/personalHomeTop"/>
+    </div>
+    <!--尾部-->
+    <script src="__JS__/header.js"></script>
+    <script src="__JS__/Calendar.js"></script>
+    <script src="__JS__/assets/assets.js"></script>
+    <script>
+
+
+    </script>
+</block>
